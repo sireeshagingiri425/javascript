@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop example</title>
+
+</head>
+<body>
+    <!-- Displaying the course,duration,branch using the for loop -->
+
+    <select id="course"></select>
+    
+    <select id="duration"></select>
+    
+    <select id="branch"></select>
+
+</body>
+<script>
+    let opt="<option> Course</option>"
+let courseName=["Java","Python","Frontend","Devops","AWS","Mysql"]
+for(i=0;i<6;i++){
+    opt+="<option>"+courseName[i]+"</option>"
+}
+
+
+document.getElementById("course").innerHTML=opt
+
+let opt1="<option> Duration </option>"
+let courseDuration=["1","2","3","4","5","6","7","8","9","10","11","12"]
+for(j=0;j<12;j++){
+    opt1+="<option>"+courseDuration[j]+"</option>"
+}
+document.getElementById("duration").innerHTML=opt1
+
+
+let opt2="<option>Branch</option>"
+let branches=["Bangalore","BTM","Nellore","Hyderabad","Kasi","Varanasi"]
+for(k=0;k<6;k++){
+    opt2+="<option>"+branches[k]+"</option>"
+}
+document.getElementById("branch").innerHTML=opt2
+
+</script>
+</html>

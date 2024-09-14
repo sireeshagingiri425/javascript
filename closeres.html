@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closers</title>
+</head>
+
+<body>
+    <script>
+        // Closure:this is a feature in js which allow 
+        // using variables inner function to access the out scope function   
+
+//  using variables
+var a=10
+function outer(){
+    var x=10;
+
+    function inner(){
+        var y=20;
+        function innersub(){
+            var z=30;
+            return x+y+z+a
+        }
+        return innersub()
+    }
+    return inner;
+}
+output=outer()
+console.log(output());
+//  using parameters
+var b=20
+function outer1(x){
+function inner1(y){
+    function innersub1(z){
+        return x+y+z+b;
+    }
+    return innersub1
+}
+return inner1
+}
+
+console.log(outer1(10)(20)(30));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // let x = 10;
+        // function outer() {
+        //     let a = 90
+        //     function inner() {
+        //         var y = 20;
+        //         function innerSub() {
+                   
+        //             return a + x + y ;
+        //         }
+        //         return innerSub;
+        //     }
+        //     return inner; 
+
+        // }
+        // let output = outer()
+        // console.log(output());
+
+
+    </script>
+</body>
+
+</html>

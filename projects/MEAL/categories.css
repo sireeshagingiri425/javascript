@@ -1,0 +1,265 @@
+body {
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e65100eb;
+    padding: 0 10%;
+}
+
+header>h2 {
+    margin: 0;
+    padding: 6px 0;
+    font-size: 19px;
+}
+
+#searchButton {
+    border: none;
+    border-radius: 19px;
+    padding: 12px 21px;
+}
+
+#searchIcon {
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 12px;
+    background: #e65100eb;
+    margin-left: 10px;
+}
+
+#searchIcon:hover {
+    background-color: white;
+    color: #e65100eb;
+}
+
+main {
+    text-align: center;
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/157/015/small/wood-texture-background-free-vector.jpg');
+    padding: 70px 0;
+}
+
+main>p {
+    color: lightgray;
+    font-size: 14px;
+}
+
+footer {
+    padding: 38px 10%;
+    background-color: #e0e0e7;
+}
+
+footer>h2 {
+    font-size: 19px;
+}
+
+hr {
+    margin-top: -15px;
+    height: 3px;
+    margin-right: 95%;
+    background-color: #e65100eb;
+    border: none;
+}
+
+img {
+    width: 206px;
+    height: 144px;
+}
+
+.imageindividualcontainer img {
+    transition: transform 2s ease-in-out 1s;
+}
+
+.imageindividualcontainer:hover img {
+    transform: scale(0.9);
+}
+
+#mainContainerImages {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 19px;
+    margin-top: 40px;
+}
+
+.imageindividualcontainer {
+    background-color: white;
+    padding: 6px;
+    position: relative;
+}
+
+.item-name {
+    text-transform: uppercase;
+    background-color: #e65100eb;
+    color: white;
+    padding: 4px 6px;
+    display: -webkit-inline-box;
+    border-radius: 4px;
+    position: absolute;
+    right: 6px;
+    top: -6px;
+    font-size: 12px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 255px;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 1000;
+    padding: 60px 20px 0 20px;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+    border-bottom: 1px solid #57575721;
+}
+
+.sidebar a:hover {
+    color: #e65100eb;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #e65100eb;
+    cursor: pointer;
+}
+
+.openbtn {
+    cursor: pointer;
+}
+
+#descriptionContainer {
+    border: 1px solid #e65100eb;
+    padding: 7px 14px;
+}
+
+#nameOfItem {
+    color: #e65100eb;
+}
+
+#itemDescription,
+#mainHeading,
+#mainContainerImages,
+#mealItemName,
+#mealItemInstructions,
+.mealItemDetails,
+.meal-item-name {
+    color: black;
+}
+
+#mainHeading {
+    border-bottom: 3px solid #e65100eb;
+    margin-right: 96%;
+    padding-bottom: 5px;
+    margin-bottom: -17px;
+    margin-top: 63px;
+}
+
+#mealImageAndInfo {
+    display: flex;
+    justify-content: center;
+    margin-top: 43px;
+}
+
+#mealItemImage {
+    width: 30%;
+    height: 20%;
+}
+
+#mealItemNameHeader {
+    color: white;
+    background-color: #e65100eb;
+    padding: 15px 26px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#mealDeatilsHeading {
+    color: #e65100eb;
+    font-size: 21px;
+}
+
+#mealItemIngrediants {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+#mealItemMeasures {
+    color: black;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#mealItemInstructions {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#mealItemInstructions li {
+    margin-bottom: 5px;
+}
+
+.ingredient-number {
+    border: 1px solid #fff;
+    padding: 1px;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    margin-right: 5px;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
+
+#categoryContainer {
+    background-color: #e0e0e7;
+    padding: 20px 10%;
+    display: none;
+}
+
+#itemimage {
+    height: 190px;
+}
+
+#showResults {
+    margin: 0 10%;
+    display: none;
+}
+
+#itemCategory {
+    position: absolute;
+    left: 262px;
+    top: 53%;
+    border-radius: 25px;
+    background-color: white;
+    color: #e65100eb;
+    padding: 3px 18px;
+}
+
+#itemArea {
+    color: lightslategray;
+    padding-bottom: 6px;
+}
+
+#itemMeal {
+    color: black;
+    margin-top: -11px;
+    padding-bottom: 17px;
+}

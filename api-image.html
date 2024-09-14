@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API images</title>
+    <style>
+        img{
+            height: 200px;
+            width: 400px;
+        }
+        .align{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+        
+    }
+    .align img{
+        margin-top: 40px;
+    }
+    </style>
+</head>
+<body>
+    <h2>Fetching images from API</h2>
+    <div class="align">
+    <img class="image"/>
+    <img class="image"/>
+    <img class="image"/>
+    <img class="image"/>
+    <img class="image"/>
+    <img class="image"/>
+</div>
+    <button id="getimage">Get Image</button>
+
+    <script>
+let btn=document.getElementById('getimage');
+let img=document.getElementsByClassName('image');
+getimage.addEventListener('click',()=>{
+    for(let i=0;i<img.length;i++){
+        (fetch(`https://dog.ceo/api/breeds/image/random`))
+        .then(response=>response.json())
+        .then(data=>{
+            console.log(data);
+            img[i].setAttribute('src',data.message);
+        })
+    }
+
+})
+    </script>
+</body>
+</html>

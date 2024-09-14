@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+
+<body>
+    <script>
+        //array declaration using literals 
+        const name = ["siri", "rama", 2, 4, 9, "raji", "siri", "giri", "pavan", "Lokesh"]
+        console.log(typeof name);//object
+        console.log(name);// ['siri', 'rama', 2, 4, 9, 'raji', 'giri', 'pavan', 'Lokesh',',']
+        console.log(name.length);//9
+
+
+        // array declaration using constructor
+        const name1 = new Array("nikki", 25, 60, "appu")
+        console.log(name1);//[25, 60, 'nikki', 'appu']
+        const name2 = name + name1
+        console.log(name2);//siri,rama,2,4,9,raji,giri,pavan,Lokeshnikki,25,60,appu
+
+        // updating the values
+        console.log(name);//['siri', 'rama', 2, 4, 9, 'raji', 'giri', 'pavan', 'Lokesh']
+        name[4] = "sireesha"
+        console.log(name);//['siri', 'rama', 2, 4, 'sireesha', 'raji', 'giri', 'pavan', 'Lokesh']
+
+        // accessing elements using index values
+
+        console.log(name[7]);//pavan
+        console.log(name1[3]);//appu
+
+        // accesing elements using for loop
+
+        for (i = 0; i < name.length; i++) {
+            console.log(i);//0 1 2 3  4 5 6 7 8
+            console.log(name[i]);//siri rama 2 4 9 raji giri pavan lokesh
+
+        }
+
+        //  accaessing elements using For in  loop. it display index and value
+
+        // for in 
+        for (i in name) {
+            console.log(i + "=>" + name[i]);//0=>siri 1=>rama 2=>2 3=>4 4=>9 5=>raji 6=>giri 7=>pavan 8=>lokesh
+        }
+
+        // for of loop:directly it will display the values 
+
+        for (i of name) {
+            console.log(i);//siri rama 2 4 9 raji giri pavan lokesh
+        }
+
+        //Array methods
+        //    1.length
+        console.log(name);//['siri', 'rama', 2, 4, 'sireesha', 'raji', 'giri', 'pavan', 'Lokesh']
+        console.log(name.length);//9
+
+        // 2.push(): 1.it will add -the values at the end of the array.
+        //           2.it will return the new length of array
+
+        console.log(name.push(3, 4, 9));
+        console.log(name);//['siri', 'rama', 2, 4, 'sireesha', 'raji', 'giri', 'pavan', 'Lokesh', '3,4,6']
+
+        //3.pop():1. It will remove the last element.
+        //          2.it will display the deleted values
+
+        console.log(name.pop());//9
+
+        //   4.shift():1.it will remove the elements from beginning
+        //         2.it will display the removed values 
+
+        console.log(name.shift())//siri
+
+        // 5.unshift():1.it will add the elements in the beginning.
+        //             2.it will return the new length of array
+        console.log(name);// ['rama', 2, 4, 'sireesha', 'raji', 'giri', 'pavan', 'Lokesh', 3, 4]
+
+        console.log(name.unshift("Rajeswari"));//11 it will display only length
+
+        console.log(name);['Rajeswari', 'rama', 2, 4, 'sireesha', 'raji', 'giri', 'pavan', 'Lokesh', 3, 4]
+        //6.slice():1.it will remove elements by using  start index values,end index
+        //                 2.it will create new array for the removed elements.
+        //                 3. it can't modify the original array
+
+        console.log(name.slice(3, 6));// [4, 'sireesha', 'raji']
+        console.log(name);//['Rajeswari', 'rama', 2, 4, 'sireesha', 'raji', 'giri', 'pavan', 'Lokesh', 3, 4]
+
+        
+        //7.splice():1.it will remove the elements by using index values
+        //           2.it will remove the the 9 values and display the modified elements
+        //           3.To add elements, specify the start index, set deleteCount to 0, and provide the elements to add.
+        //              4.ex:splice(3,1,'rama')
+
+        console.log(name.splice(9));
+        console.log(name.splice(3, 1, 'rama'));
+        console.log(name);
+
+
+        // 8.toSpliced(): 1.returns the new array with the modifications, not the removed elements.
+        
+        console.log(name);
+        console.log(name.toSpliced(2, 3, "java"));
+        console.log(name);
+
+        // 9.concat():1.it will combine the two elements
+        //                    2.it will add at last
+
+        console.log(name.concat("Madhav"));
+
+        //  10.sort():1.sort converts elements to strings and sorts them in ascending order.
+        console.log(name.sort());//[2, 'Lokesh', 'Rajeswari', 'giri', 'pavan', 'raji', 'rama', 'rama', 'sireesha']
+        //          11.indexOf():1.it will gives the index value of an array
+        console.log(name.indexOf('pavan'));//4
+        // 12.lastIndexOf():
+        console.log(name.lastIndexOf('siri'));//8
+        // 13.reverse():1.it will reverse the array
+        console.log(name);
+        console.log(name.reverse());
+
+    </script>
+</body>
+
+</html>

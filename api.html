@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <div id="output"></div>
+  <script>
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(data => {
+
+      let table=`<table border>
+        <tr bgcolor="litegray">
+          <th>id</th>
+          <th>name</th> 
+          <th>email</th> 
+          <th>city</th> 
+          <th>companyname</th>  
+          </tr>`
+          data.forEach(row => {
+            table+= `<tr bgcolor="pink">
+              <td>${row.id}</td>
+              <td>${row.name}</td>
+              <td>${row.email}</td>
+              <td>${row.address.city}</td>
+              <td>${row.company.name}
+              </tr>`
+            
+          });
+        table+=`</table>`
+        document.getElementById('output').innerHTML=table
+        console.log(table);
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS class and object examples</title>
+</head>
+
+<body>
+    <p id= "p1"></p>
+    <p id= "p2"></p>
+    <p id= "p3"></p>
+    <p id= "p4"></p>
+    <Script>
+        class Person {
+            constructor(name,age,gender,salary) {
+this.name=name;
+this.age=age;
+this.gender=gender;
+this.salary=salary;
+}
+getName(){
+    return this.name
+    
+}
+getAge(){
+    return this.age
+}
+getGame(){
+    return this.gender
+}
+
+getSalary(){
+    return this.salary;
+}
+
+details() {
+
+    
+    return `Name:${this.name}, Age:${this.age}, Gender:${this.gender},  Salary:${this.salary}` ;
+    
+}
+        }
+const person1=new Person('sireesha',25,'Female',1000000);
+const person2=new Person('Rama',35,'Female',900000);
+const person3=new Person('Madhav',40,'male',800000);
+const person4=new Person('Dhanvika',24,'Female',500000);
+const person5=new Person('Lavanya',29,'Female',10000);
+document.getElementById('p1').innerHTML=person1.details();
+document.getElementById('p2').innerHTML=person2.details();
+document.getElementById('p3').innerHTML=person3.details();
+document.getElementById('p4').innerHTML=person4.details();
+
+    </Script>
+</body>
+
+</html>

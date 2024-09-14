@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FB login</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<style>
+  .main_container {
+    border: solid 1px;
+    border-radius: 10px;
+    width: 430px;
+    height: 530px;
+    margin-left: 400px;
+
+  }
+
+  .first {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .first h1 {
+    font-size: 30px;
+    margin-top: 2px;
+    margin-left: 10px;
+  }
+
+  .first p {
+    margin-top: -30px;
+    margin-left: 10px;
+    color: lightslategrey;
+    font-size: 15px;
+  }
+
+  .first i {
+    font-size: 30px;
+    color: lightslategrey;
+    margin-right: 30px;
+    margin-top: 10px;
+  }
+
+  .gender {
+    display: flex;
+    text-align: center;
+
+  }
+
+  .gender div {
+    border: solid 1px;
+    width: 100px;
+    margin-left: 20px;
+    line-height: 30px;
+    width: 130px;
+    margin-left: 8px;
+    border-radius: 5px;
+    border: solid 1px #1a0b0b;
+
+  }
+
+  #fn,
+  #sn {
+    width: 190px;
+    line-height: 25px;
+    margin-top: 10px;
+    margin-left: 9px;
+    background-color: #ebf0f5;
+    border-radius: 5px;
+    border: solid 1px white;
+
+  }
+
+  #email,
+  #pwd {
+    width: 400px;
+    line-height: 25px;
+    margin-left: 9px;
+    background-color: #ebf0f5;
+    border-radius: 5px;
+    border: solid 1px white;
+  }
+
+  .dob {
+    display: flex;
+    margin-top: -12px;
+
+  }
+
+  .dob select {
+    width: 130px;
+    margin-left: 9px;
+    border-radius: 5px;
+    border: solid 1px #1a0b0b;
+  }
+
+  .g {
+    margin-left: 10px;
+    margin-top: 4px;
+  }
+
+  .p {
+    margin-top: -30px;
+    margin-left: 10px;
+  }
+
+  #signup {
+    margin: 0px 60px;
+    width: 280px;
+    line-height: 30px;
+    color: white;
+    background-color: green;
+    border: solid 1px white;
+    border-radius: 8px;
+  }
+
+  span {
+    color: red;
+  }
+
+  .dnone {
+    display: none;
+  }
+  /* .sec{
+    position: relative;
+  } */
+  #ferr{
+    position:fixed;
+    right:730px;
+    top:130px;
+    
+  }
+  #serr{
+    position:fixed;
+    right:500px;
+    top:130px;
+    
+  }
+   span{
+    color:red;
+  }
+</style>
+
+<body>
+  <section class="main_container">
+    <section class="sub-container">
+      <div class="first">
+        <div>
+          <h1>Sign Up</h1>
+          <p>It's quick and easy.</p>
+        </div>
+        <i class="ri-close-line"></i>
+      </div>
+      <hr>
+      <!-- <section class="sec"> -->
+      <input type="text" id="fn" placeholder="*First name" />
+      <span class="dnone" id="ferr">Please enter name</span>
+      <input type="text" id="sn" placeholder="*Surname" />
+      <span class="dnone" id="serr">Please enter surname</span><br><br>
+    <!-- </section> -->
+      <input type="email" id="email" placeholder="*Mobile number or Email address" /><br><br>
+      <span class="dnone" id="eerr">* Please enter mail or mobile number</span>
+      <input type="password" id="pwd" placeholder="*New Password" /><br><br>
+      <span class="dnone" id="perr">* Please enter new password</span>
+
+      <p class="g">Date of birth <i class="ri-question-fill"></i></p>
+      <section class="dob">
+        <select id="day"></select>
+        <select id="month"></select>
+        <select id="year"></select><br><br>
+      </section>
+      <p class="g">Gender <i class="ri-question-fill"></i></p>
+      <div class="gender">
+        <div id="female">
+          <label for="female">Female</label>
+          <input type="radio" id="female" name="gender" value="female">
+        </div>
+        <div id="male">
+          <label for="male">Male</label>
+          <input type="radio" id="male" name="gender" value="male">
+        </div>
+        <div id="custom">
+          <label for="custom">Custom</label>
+          <input type="radio" id="custom" name="gender" value="custom">
+        </div>
+      </div><br><br>
+      <div class="p">
+        <P>People who use our service may have uploaded your contact information to Facebook. Learn more</P>
+
+        <button id="signup">Sign Up</button>
+    </section>
+  </section>
+
+  <script>
+
+
+    // Populate the day dropdown
+    let dayOpt = "<option>Day</option>";
+    for (let i = 1; i <= 31; i++) {
+      dayOpt += "<option>" + i + "</option>";
+    }
+    document.getElementById("day").innerHTML = dayOpt;
+
+    // Populate the month dropdown
+    let monthOpt = "<option>Month</option>";
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    for (let i = 0; i < monthNames.length; i++) {
+      monthOpt += "<option>" + monthNames[i] + "</option>";
+    }
+    document.getElementById("month").innerHTML = monthOpt;
+
+    // Populate the year dropdown
+    let yearOpt = "<option>Year</option>";
+    const currentYear = new Date().getFullYear();
+    for (let i = currentYear; i >= 1900; i--) {
+      yearOpt += "<option>" + i + "</option>";
+    }
+    document.getElementById("year").innerHTML = yearOpt;
+
+
+    document.getElementById('signup').addEventListener("click", function () {
+      let fname, sname, mail, password;
+      fname = document.getElementById('fn').value;
+      sname = document.getElementById('sn').value;
+      mail = document.getElementById('email').value;
+      password = document.getElementById('pwd').value;
+
+      if (fname == "") {
+        document.getElementById('ferr').style.display = "block";
+      }
+      else {
+        document.getElementById('ferr').style.display = "none";
+      }
+
+      if (sname =="") {
+        document.getElementById('serr').style.display = "block";
+      }
+      else {
+        document.getElementById('serr').style.display = "none";
+      }
+
+      if (mail == "") {
+        document.getElementById('eerr').style.display = "block";
+      }
+      else {
+        document.getElementById('eerr').style.display = "none";
+      }
+
+      if (password == "") {
+        document.getElementById('perr').style.display = "block";
+      }
+      else {
+        document.getElementById('perr').style.display = "none";
+
+      }
+      if(fname!== ""&& sname !==""&& mail !== ""&&password !== ""){
+        alert("User signedin successfully")
+      }
+      
+    })
+  </script>
+</body>
+
+</html>

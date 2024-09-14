@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Objects</title>
+</head>
+
+<body>
+    <script>
+        // Object:It is a collection of key-value pair,where keys are strings and values are can be any datatype.
+
+        // 1. creating object using literals
+
+        let person = {
+            name: "sireesha",
+            age: 25,
+            gender: "female",
+            graduation: "b.tech"
+        };
+        console.log(person);//{name: 'sireesha', age: 25, gender: 'female', graduation: 'b.tech'}
+
+        // 2. creating nested objects
+        let person1 = {
+            name: "sireesha",
+            age: 25,
+            gender: "female",
+            graduation: "b.tech",
+            street: {
+                street: "dental clg",
+                city: 'bangalore',
+                zipCode: '36007'
+            }
+        }
+        console.log(person1.street.street);//dental clg
+        console.log(person1.street);//{street: 'dental clg', city: 'bangalore', zipCode: '36007'}
+
+        console.log(person1.street.street);//dental clg
+
+        //   3.creating objects using constructor function
+
+        function person2(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+        let rama = new person2("siri", 25, "female")
+        console.log(rama);//person2 {name: 'siri', age: 25, gender: 'female'}
+
+        // Accessing the object values using [](bracket notation)
+        console.log(person["name"]);//sireesha
+
+        // Accessing the object values using dot(.)notation
+        console.log(person.name);//sireesha
+
+        //adding values using dot notations
+        console.log(person['mail'] = "sireeshagingiri@gmail.com");//sireeshagingiri@gmail.com
+        
+        //adding values using bracket[] notations
+        console.log(person.fav_color="black");//black
+
+//accessing the values using for in loop
+for(i in person){
+    console.log(i);//it will give only keys as output
+    console.log(person[i]);//it will give the values as output
+    
+}
+
+//Accessing keys  in object
+console.log(Object.keys(person));// ['name', 'age', 'gender', 'graduation', 'mail', 'fav_color']
+
+//Accessing values in object
+console.log(Object.values(person));//['sireesha', 25, 'female', 'b.tech', 'sireeshagingiri@gmail.com', 'black']
+
+// hasOwnProperty():it will check the key or value is there or not and gives boolean values as result
+console.log(person.hasOwnProperty('salary'));//false
+console.log(person.hasOwnProperty('name'));//true
+
+   </script>
+</body>
+
+</html>

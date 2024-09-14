@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="./categories.css">
+</head>
+<body>
+    <header id="containerHeader">
+        <h2>
+            <span><i class="fa-duotone fa-solid fa-utensils" style="padding-right: 12px;"></i></span>MEAL FINDER
+        </h2>
+        <h2>
+            <i class="fa-solid fa-bars openbtn" onclick="openNav()"></i>
+        </h2>
+    </header>
+    <main>
+        <input type="search" name="searchButton" id="searchButton" placeholder="Search recipes here.." >
+        <i class="fa-solid fa-magnifying-glass" id="searchIcon"> </i>
+        <h2>What are your favorite cuisines?</h2>
+        <p>PERSONALIZE YOUR EXPERIENCE</p>
+    </main>
+    <footer>
+        <section id="descriptionContainer">
+            <h2 id="nameOfItem"></h2>
+            <p id="itemDescription"></p>
+        </section>
+        <section>
+            <h1 id="mainHeading">Meals</h1>
+            <section id="mainContainerImages"></section>
+        </section>
+        <section id="mealItemContainer" style="display: none;">
+                <h4 id="mealItemNameHeader"></h4>
+                <h2 style="color: black;">MEAL DETAILS</h2>
+                <hr />
+                <section id="mealImageAndInfo">
+                    <img id="mealItemImage" src="" alt="" style="margin-right: 77px;">
+                    <section>
+                        <h1 id="mealDeatilsHeading"></h1>
+                        <hr style="height: 1px; margin-right: 0%;">
+                        <h3 id="mealItemCategory" style="color: black;"></h3>
+                        <h4 id="MealItemSource" style="color: black;"></h4>
+                        <h2 style="color: black;">Tags:</h2>
+                        <section style="background-color: #e65100eb; font-size: 15px; padding: 17px 23px;">
+                            <h1 style="font-size: 21px; margin: 0; padding: 14px 0px;">Ingredients</h1>
+                            <section id="mealItemIngrediants"></section>
+                        </section>
+                    </section>
+                </section>
+                <h3 style="color: black;">Measures</h3>
+                <div id="mealItemMeasures" style="color: black;"></div>
+                <h3 style="color: black;">Instructions</h3>
+                
+                <ul id="mealItemInstructions" class="custom-instructions"></ul>
+        </section>   
+      
+    </footer>
+    <section id="categoryContainer">
+        <h2 style="color: black;">CATEGORIES</h2>
+        <hr />
+        <section id="mainContainerImages">
+            <a href="./beef.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./chicken.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./desert.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./lamb.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./miscellaneous.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./pasta.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./pork.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./seafood.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./side.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./starter.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./vegan.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./vegetarian.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./breakfast.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./goat.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+        </section>
+    </section>
+
+    <div id="mySidebar" class="sidebar">
+        <span class="closebtn" onclick="closeNav()"><i class="fa-regular fa-circle-xmark"></i></span>
+        <a href="./beef.html">Beef</a>
+        <a href="./chicken.html">Chicken</a>
+        <a href="./desert.html">Dessert</a>
+        <a href="./lamb.html">Lamb</a>
+        <a href="./miscellaneous.html">Miscellaneous</a>
+        <a href="./pasta.html">Pasta</a>
+        <a href="./pork.html">Pork</a>
+        <a href="./seafood.html">Seafood</a>
+        <a href="./side.html">Side</a>
+        <a href="./starter.html">Starter</a>
+        <a href="./vegan.html">Vegan</a>
+        <a href="./vegetarian.html">Vegetarian</a>
+        <a href="./breakfast.html">Breakfast</a>
+        <a href="./goat.html">Goat</a>
+
+    
+        <script>
+            function openNav() {
+                document.getElementById("mySidebar").style.right = "0";
+            }
+    
+            function closeNav() {
+                document.getElementById("mySidebar").style.right = "-300px";
+            }
+    
+            document.addEventListener('DOMContentLoaded', () => {
+                const category = 'Side';
+                const itemName = document.getElementById('nameOfItem');
+                const itemDescription = document.getElementById('itemDescription');
+    
+                fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        itemName.textContent = data.categories[8].strCategory;
+                        itemDescription.textContent = data.categories[8].strCategoryDescription.replace(/[0-9\[\]]/g, '');
+                    });
+    
+                const mainContainerImages = document.getElementById('mainContainerImages');
+                fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        mainContainerImages.innerHTML = '';
+                        data.meals.forEach(meal => {
+                            const imgContainer = document.createElement('div');
+                            imgContainer.className = 'imageindividualcontainer';
+                            imgContainer.innerHTML = `
+                                <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+                                <h3 class='meal-item-name'>${meal.strMeal}</h3>
+                            `;
+                            imgContainer.addEventListener('click', () => showMealDetails(meal.idMeal));
+                            mainContainerImages.appendChild(imgContainer);
+                        });
+                    });
+    
+                function showMealDetails(mealId) {
+                    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log(data);
+    
+                            const meal = data.meals[0];
+                            document.getElementById('mealItemImage').src = meal.strMealThumb;
+    
+                            
+                            document.getElementById('mealItemNameHeader').innerHTML = `
+                                <i class="fa-solid fa-house"></i> >> ${meal.strMeal}
+                            `;
+    
+                            document.getElementById('mealDeatilsHeading').textContent = meal.strMeal;
+    
+               
+                            document.getElementById('mealItemCategory').innerHTML = `CATEGORY: <span style=font-weight:100;>${meal.strCategory}</span>`;
+                            document.getElementById('MealItemSource').innerHTML = `Source: <span style=font-weight:100;>${meal.strSource || 'N/A'}</span>`;
+    
+                            const instructionsContainer = document.getElementById('mealItemInstructions');
+                            instructionsContainer.innerHTML = '';
+                            const instructions = meal.strInstructions.split('. ');
+                            instructions.forEach((instruction, index) => {
+                                if (instruction.trim()) {
+                                    const instructionElement = document.createElement('li');
+                                    instructionElement.innerHTML = `<i class="fa-regular fa-square-check" style="color: #e65100eb;"></i> ${instruction.trim()}`;
+                                    instructionsContainer.appendChild(instructionElement);
+                                }
+                            });
+    
+                            const ingredientsContainer = document.getElementById('mealItemIngrediants');
+                            ingredientsContainer.innerHTML = '';
+                            for (let i = 1; i <= 20; i++) {
+                                const ingredient = meal[`strIngredient${i}`];
+                                const measure = meal[`strMeasure${i}`];
+                                if (ingredient) {
+                                    const ingredientElement = document.createElement('div');
+                                    ingredientElement.innerHTML = `
+                                        <span class="ingredient-number">${i}</span> ${ingredient}
+                                    `;
+                                    ingredientsContainer.appendChild(ingredientElement);
+                                }
+                            }
+    
+                            const measuresContainer = document.getElementById('mealItemMeasures');
+                            measuresContainer.innerHTML = '';
+                            for (let i = 1; i <= 20; i++) {
+                                const measure = meal[`strMeasure${i}`];
+                                if (measure && measure.trim() !== '') { 
+                                    const measureElement = document.createElement('div');
+                                    measureElement.innerHTML = `<i class="fa-solid fa-spoon" style="color: #e65100eb;"></i> ${measure.trim()}`;
+                                    measuresContainer.appendChild(measureElement);
+                                }
+                            }
+    
+                            document.getElementById('mealItemContainer').style.display = 'block';
+                            document.getElementById('categoryContainer').style.display = 'block';
+                            document.querySelector('#descriptionContainer').style.display = 'none';
+                            document.querySelector('#mainHeading').style.display = 'none';
+                            mainContainerImages.style.display = 'none';
+                        })
+                        .catch(error => console.error('Error fetching meal details:', error));
+                }
+            });
+            let imageContainer = document.getElementsByClassName('individual-container-image');
+            let imageName = document.getElementsByClassName('item-name');
+    
+    
+            fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    for (let i = 0; i < 14; i++) {
+                        imageName[i].textContent = data.categories[i].strCategory;
+                        imageContainer[i].src = data.categories[i].strCategoryThumb;
+                    }
+                });
+</script>
+</body>
+</html>

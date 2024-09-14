@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call-Bind-Apply</title>
+</head>
+
+<body>
+    <script>
+        let person = {
+            name: "Sireesha",
+            age: 25,
+            gender: " Female",
+            about: function (city, salary) {
+                return this.name + " " + this.age + " " + this.gender + " " + city + " " + salary;
+            }
+        }
+        let person2 = {
+            name: "Nishanth",
+            age: 26,
+            gender: "Male"
+        }
+        let person3 = {
+            name: "Rama",
+            age: 36,
+            gender: "Female"
+        }
+
+        let person4 = {
+            name: "Dhanvika",
+            age: 25,
+            gender: "Female"
+        }
+        
+        console.log(person.about());
+
+        console.log(person.about.call(person2, 'bangalore', 25000));
+
+        console.log(person.about.apply(person3, ['bangalore', 25000]));
+
+        let result = person.about.bind(person4)
+        console.log(result(['hyd'],[60000]));
+
+    </script>
+</body>
+
+</html>

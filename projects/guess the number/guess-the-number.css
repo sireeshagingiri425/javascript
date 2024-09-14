@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+    color:white;
+}
+.first{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.first button{
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+}
+.first p{
+    font-size: 20px;
+}
+.second{
+    margin-left: 600px;
+    margin-top: 10px;
+    font-size: 19px;
+}
+.h-line{
+    height: 5px;
+    margin-top: 35px;
+    background-color: white;
+    
+}
+.qmark{
+    margin-left: 650px;
+    height: 40px;
+    width: 40px;
+    margin-top: -150px;
+    padding-top: 8px;
+    background-color:#fa4bd7 ;
+    color:white;
+    font-size: 30px;
+    align-items: center;
+    border: none;
+    
+}
+.bottom{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 130px;
+}
+.left div{
+    border:solid 1px white;
+    height: 40px;
+    width: 90px;
+}
+.left button{
+    margin-top: 20px;
+    width: 80px;
+    font-size: 20px;
+}
+.right p{
+    margin-top: 20px;
+    font-size: 25px;
+}
+.right{
+    margin-top: -30px;
+}

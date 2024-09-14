@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD </title>
+</head>
+<body>
+    <script>
+        //CRUD:create,read,update,delete
+        let person=[
+            {name:'siri',id:1,gender:'female'},
+            {name:'rama',id:2,gender:'female'},
+            {name:'dhanvika',id:3,gender:'female'}
+
+        ]
+
+        // read the entair values
+
+        function Data(){
+            return person;
+            
+        }
+        console.log(Data());
+// reading  specific values by using id
+function PersonData(id){
+    return person.find(item=>item.id===id)
+}
+console.log(PersonData(2));
+//create values in to object
+
+function createPerson(x){
+person.push(x)   ;
+
+}
+createPerson({name:'Mahadev',id:4,gender:'male'});
+console.log(person);
+
+// updating the values
+function updateValue(id,updateValue){
+     const index=person.findIndex(item=>item.id===id);
+     
+     if(index!==-1){
+        person[index]={...person[index],...updateValue} ;
+
+     }
+}
+updateValue(3,{name:'ramya'})
+updateValue();
+console.log(person);
+// delete the values
+function deleteValue(id){
+   person =person.filter(item=>item.id!==id)
+}
+deleteValue(3)
+console.log(person);
+    </script>
+</body>
+</html>

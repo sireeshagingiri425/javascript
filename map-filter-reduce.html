@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP-FILTER-REDUCE</title>
+</head>
+<body>
+    <script>
+        // map()
+        let armap=[2,4,6,8]
+let ar2=armap.map(x=>x+10)
+console.log(ar2);
+// filter()
+let arfilter=[5,6,9,10,4,3,7,2,4,8]
+let  arfilter1=arfilter.filter(x=>x%2==0)
+console.log(arfilter1);
+// reduce()
+let arreduce=[10,20,30,40,50]
+let result=arreduce.reduce((x,y)=>{
+   return x+y;
+})
+console.log(result);
+        
+    </script>
+</body>
+</html>

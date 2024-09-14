@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+<body>
+    <script>
+// copy the array
+
+let array1=['siri','rama',2,4]
+let array2=[...array1]
+console.log(...array1);
+console.log(...array2);
+console.log(array1===array2);
+//combining two arrays using spread operator
+let ar1=['madhu','nishanth','dhanvika',6,7,3]
+let ar2=[3,34,56,27]
+let ar3=[...ar1,...ar2]
+console.log(ar1);
+console.log(ar2);
+console.log(ar3);
+
+// in object concept using spread operator
+//copy the objects
+let person={
+    name:'sireesha',
+    age:25,
+    gender:'female'
+}
+let person1={...person}
+
+console.log(person1);
+console.log(person===person1);
+console.log(typeof person1);
+//combining the two objects
+let person2={
+    name1:'madhu',
+    rollno:25,
+    }
+    let person3={...person,...person2}
+   
+    console.log(person3);
+</script>
+</body>
+</html>

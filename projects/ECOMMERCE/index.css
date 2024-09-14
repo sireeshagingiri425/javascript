@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid .navbar-brand{
+    font-size: 40px;
+
+}
+.navbar-nav{
+    margin-left: 400px;
+}
+.navbar-nav li{
+   margin-left: 40px;
+   font-size: 25px;
+}
+.d-flex{
+    margin-right: 80px; 
+}
+.d-flex .btn{
+    margin-left: 30px;
+}
+.image-size{
+    width:200px;
+    height: 200px;
+ }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression</title>
+</head>
+<body>
+   
+   <input type="text" id="mail" placeholder="Enter your Email"/><br><br>
+   <input type="text" id="pwd" placeholder="Enter Password"/><br><br>
+   <button onclick="varification()">Verify</button>
+   <p id="errormsg"></p>
+
+   <script>
+function varification(){
+      const email = document.getElementById('mail').value;
+      const password = document.getElementById('pwd').value;
+      const pattern1 = /^[a-zA-Z]\d*@(gmail)\.com$/;
+      const pattern2 =  /^(?=.*\W)(?=.*\w)(?=.*\d).{8,}$/;
+
+      if(!pattern1.test(email) && !pattern2.test(password)){
+        document.getElementById('errormsg').innerText = "Invalid email and password";
+        document.getElementById('errormsg').style.color = "red";
+    //   } else if(!pattern1.test(email)) {
+        document.getElementById('errormsg').innerText = "Invalid email address";
+        document.getElementById('errormsg').style.color = "red";
+      }
+      else if(!pattern2.test(password)) {
+        document.getElementById('errormsg').innerText = "Invalid password";
+        document.getElementById('errormsg').style.color = "red";
+      }
+      else{
+
+        document.getElementById('errormsg').innerText = "Successfully Verified";
+        document.getElementById('errormsg').style.color = "green";
+      
+      }
+    }
+   </script>
+
+</body>
+</html>

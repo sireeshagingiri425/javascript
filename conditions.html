@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional statements</title>
+</head>
+<body>
+    <!-- 
+    conditional operators:
+    1.ternary:
+    condition?statement1:statement2
+
+    2. if statemet:
+    syntax:if(condition){
+    block of code or statements
+    }
+
+
+    3.if-else statement:
+    syntax:if(condition){
+    block of code or statemets
+    }
+    else{
+    block of code or statements
+    }
+
+    4.if-else lader:
+    syntax:if(condition1){
+    block of code or statements
+    }
+    elseif(condition2){
+    block of code or statements
+    }
+    .........
+    ........
+    elseif(condition n){
+    block of code or statements}
+    else{
+    block of code or statements
+    }
+
+    5.switch(expression){
+    case a://block of code
+    break;
+    case b://block of code
+    break;
+    case c://block of code
+    break;
+    default://block code
+    }
+     -->
+    <script>
+    
+    //    1.ternary:  
+
+
+    //  let x=5;
+    //  x>10?document.write("given num is big"):document.write("given num is small")
+
+    // 2.if statement:
+    // let x=10;
+    // if(x=10){
+    //     document.write("Both numbers are equal")
+    // }
+
+    // 3.if-else:
+// *********EX:1*************
+// let age=prompt("enter your age")
+// if(age>=18){
+//     document.write("Eligible for voting")
+// }
+// else{
+//     document.write("Not eligible for voting")
+// }
+
+// *************EX:2***********
+
+// var balance=5000
+// var amount=prompt("Entre amount")
+
+// if(balance>amount){
+//     console.log(amount);
+//     alert("before dedect:"+ balance)
+ 
+//     balance = balance-amount;
+//     alert("amount debited successfully")
+
+//     alert("Availabl balance:"+balance)
+// }
+// else{
+//     alert("Your available balance is:" +balance+"Enter amount less than"+balance)
+// }
+
+
+
+
+
+
+
+// 4.if-elseif-else
+// *********ex:1***********
+// let season = prompt('enter you number');
+// if(season >=1 && season <=4){
+//     document.write('winter')
+// }
+// else if(season >=5 &&  season <=8){
+//     document.write('summer')
+
+// }
+// else if(season >=9 &&  season <=12){
+//     document.write('rainy')
+
+// }
+// else{
+//     document.write('no season')
+// }
+//************* ex:3*************
+// let time=prompt("Enter the time")
+// if(time<=12)
+// {
+//     document.write("It is morning")
+// }
+// else if(time>=13 && time<=15)
+// {
+//     document.write("it is afternoon")
+// }
+// else if(time>=16 && time<=18)
+// {
+//     document.write("it is evening")
+// }
+// else if(time>=19 && time<=24)
+// {
+//     document.write("it is night")
+// }
+// else{
+//     document.write("eneter valid number bellow 24")
+// }
+
+// 4.switch statement:
+// let student;
+// do {
+//     student = prompt("Enter student number");
+//     switch(student) {
+//         case "1":
+//             document.write("Name: Sireesha<br> Section: A<br> Roll no: 1");
+//             break;
+//         case "2":
+//             document.write("Name: Girish<br> Section: B<br> Roll no: 2");
+//             break;
+//         case "3":
+//             document.write("Name: Pavan<br> Section: C<br> Roll no: 3");
+//             break;
+//         case "4":
+//             document.write("Name: Madhavi<br> Section: D<br> Roll no: 4");
+//             break;
+//         case "5":
+//             document.write("Name: Rama<br> Section: F<br> Roll no: 5");
+//             break;
+//         case "6":
+//             document.write("Name: Madhav<br> Section: G<br> Roll no: 6");
+//             break;
+//         default:
+            
+//             alert("Entered number not matching. Please enter a valid number.");
+//     }
+// }
+//  while (!["1", "2", "3", "4", "5", "6"].includes(student));
+
+
+    </script>
+</body>
+</html>

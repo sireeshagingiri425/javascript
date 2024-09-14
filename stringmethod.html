@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StringMethod</title>
+</head>
+<body>
+<!-- 
+string methods:
+length
+1.at()
+2.charAt()
+3.charCodeAt()
+4.slice()
+5.substring()
+6.strstring()
+7.toUpperCase()
+8.toLowerCase()
+9.trim()
+10.trimStart()
+11.trimEnd()
+12.padStart()
+13.padEnd()
+14.repeat()
+15.replace()
+16.replaceAll()
+17.concat()
+18.indexOf()
+19.lastIndexOf()
+
+  -->
+</body>
+<script>
+    let name = " Sireesha Gingiri "
+    console.log(name);//Sireesha Gingiri
+    console.log(name.length)//16
+    
+//     1.at():1.Returns the character at the specified index.
+//            2.Supports negative indices to access characters from the end of the string.
+//            3.If the index is out of bounds, it returns undefined.
+
+    console.log(name.at(4));//e
+    console.log(name.at(-4));//g
+    console.log(name.at(16));//undefine
+
+//     2.charAt() :1.Returns the character at the specified index.
+//                 2.Does not support negative indices.
+//                 3.If the index is out of bounds, it returns an empty string
+    console.log(name.charAt(6));//h
+    console.log(name.charAt(-6));//""(it will display empty string)
+    console.log(name.charAt(16));//""(it will display empty string)
+
+//  3.charCodeAt():1.Returns the Unicode value of the character at the specified index.
+//                 2.Does not support negative indices.
+//                 3. Returns NaN if the index is out of bounds.
+console.log(name.charCodeAt(9));//71 means'G'
+console.log(name.charCodeAt(3));//101 means 'e'
+console.log(name.charAt(16));//NaN
+
+// 4.slice():1.Extracts a section of a string and returns it as a new string.
+//           2.Supports negative indices.
+//           3.If the end index is not provided, extracts through the end of the string.
+//           4.Does not modify the original string.
+// syntax:*** slice(startIndex, endIndex) ***
+console.log(name.slice(1,14));//ireesha Gingi
+console.log(name.slice(3));//eesha Gingiri (here end index not mentioned so it will take to last)
+
+//5.substring():1.startIndex: The position to start extraction (inclusive).
+//             2.endIndex (optional): The position to end extraction (exclusive). If omitted, extracts to the end of the string.
+//             3.If startIndex > endIndex, the method swaps them.
+//             4.Negative indices are treated as 0.
+console.log(name.substring(1,10));//ireesha G
+console.log(name.substring(-2))//0
+
+// 6.substr():1.If startIndex is negative, it counts from the end of the string.
+//            2. If length is omitted, extraction continues to the end of the string.
+
+console.log(name.substr(10));//ingiri
+console.log(name.substr(-10));//ha Gingiri
+
+// 7.toUpperCase():
+console.log(name.toUpperCase());//SIREESHA GINGIRI
+console.log(name.toLowerCase());//sireesha gingiri
+
+// 8.trim():
+console.log(name);
+console.log(name.trim());//Sireesha Gingiri
+
+//9.trimStart():
+console.log(name);
+console.log(name.trimStart());
+//10.trimEnd():
+console.log(name);
+console.log(name.trimEnd());
+// 11.padStart():
+console.log(name.padStart(20,"HI"));
+//12.padEnd()
+console.log(name.padEnd(20,"HI"));
+
+//13. repeat()
+console.log(name.repeat(5));
+// 14.replace()
+console.log(name.replace('i','r'));
+// 15.replace()
+console.log(name.replaceAll('i','r'));
+// 16.concact
+console.log(name.concat("iam siri"));
+//17.indexOf():
+console.log(name.indexOf("i"));//2
+// 18.lastIndex()
+console.log(name.lastIndexOf("i"));//16
+</script>
+
+</html>
+

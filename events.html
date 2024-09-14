@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events</title>
+</head>
+
+<body>
+    <!-- Events: there are many type of events are there
+ 1.Mouse Events:
+ *click
+ *double click(dblClick)
+ *mouseUp
+ *mousedown
+ *mouseenter
+ *mouseover
+ *mouseout
+ *mouseleave
+ contextmenu
+  -->
+
+
+
+
+    First Name(single click) : <input type="button" id="btn" value="Sireesha" /><br><br>
+    Last Name (single click) : <input type="button" id="btn1" value="Gingiri" /><br><br>
+    Gender (double click) : <input type="button" id="btn2" value="Female" /><br><br>
+    Age (mouseup) : <input type="button" id="btn3" value="25" /><br><br>
+    Date of birth (mousedown) : <input type="button" id="btn4" value="21-11-1998" /><br><br>
+Father Name :(mouseover) : <input type="button" id="btn5" value="Sreehari" /><br><br>
+Mother Name (mouseleave) : <input type="button" id="btn6"value="Rajeswari" /><br><br>
+School Name (contextmenu) : <input type="button" id="btn7"value="Z.P.P.highschool" /><br><br>
+
+
+
+
+    <!-- 1.Click Event:  Fired when an element is clicked. -->
+    <!-- way:1 -->
+    <script>
+        let mybtn = document.getElementById('btn')
+        mybtn.addEventListener("click", function () {
+            mybtn.style.backgroundColor = "pink", mybtn.style.color = "white"
+            alert("button clicked,backgroundColor : pink and color : white")
+        })
+
+        // <!-- way:2 -->
+        document.getElementById('btn1').addEventListener("click", function () {
+            this.style.backgroundColor = "orange", this.style.color = "white"
+            alert("single clicked background Color: orange and color : white")
+        })
+        /*
+        2.Double Click:(dblclick)
+        The double-click event (dblclick) is triggered when 
+        a user clicks on an element twice in quick succession
+         */
+
+        document.getElementById('btn2').addEventListener("dblclick", function () {
+            this.style.border = "solid 2px green", this.style.color = "red"
+            alert("double clicked, border :green color,color :red")
+        })
+
+        /*
+        3.MouseUp: The mouseup event is triggered when the user releases a mouse button
+         while the pointer is over a specific element
+        */
+
+        document.getElementById('btn3').addEventListener("mouseup", function () {
+            this.style.backgroundColor = "aqua",this.style.width="40px"
+
+            alert("Mouseup is done and with :50px  bg color: aqua")
+        })
+        /*
+       4. Mousedown :  The mousedown event in JavaScript is triggered when a mouse button is pressed down over an element.
+        */
+        document.getElementById('btn4').addEventListener("mousedown", function () {
+            this.style.backgroundColor = "red", this.style.color = "white"
+            alert("mousedown is clicked background Color: red and color : white")
+            
+        })
+
+        /*5. Mouseover :  The mouseover event in JavaScript is triggered when the mouse pointer enters an element.
+        */
+        document.getElementById('btn5').addEventListener("mouseover", function () {
+            this.style.backgroundColor = "blue", this.style.color = "white",this.style.width="90px"
+            alert("mouseover  background Color: blue and color : white width :90px")
+            
+        })
+
+         /*6. Mouseenter :   the mouse pointer enters the element to which the event listener is attached, not when it enters child elements.
+        */
+        document.getElementById('btn6').addEventListener("mouseenter", function () {
+            this.style.backgroundColor = "brown", this.style.color = "white",
+            alert("mouseentered is clicked background Color: brown and color : white")
+            
+        })
+        /*7. Mouseleave :  t. It is similar to the mouseout event, but mouseleave does not bubble
+        */
+        document.getElementById('btn6').addEventListener("mouseleave", function () {
+            this.style.backgroundColor = "brown", this.style.color = "white",
+            alert("mouseleave is clicked background Color: brown and color : white")
+            
+        })
+        /*8. contextmenu :  The contextmenu event in JavaScript is triggered when 
+                            the user right-clicks on an element to open the context menu.
+        */
+        document.getElementById('btn7').addEventListener("contextmenu", function () {
+            this.style.backgroundColor = "lightcoral", this.style.color = "white",
+            alert("right button  is clicked background Color: lightcoral and color : white")
+            
+        })
+      
+      
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+
+    <script>
+        console.log("hello world");
+       
+
+
+    </script>
+    <script>
+        // Function:nction are block of code designed to perfprm a perticular task,
+        // it is execute when we call  the function.
+
+        // 1.Function with out parameters
+
+        function greet(){
+            console.log("Hello Everyone......");//Hello Everyone......
+        }
+        greet()
+
+        // 2.Function with parameters
+        function  greet1(name){
+        console.log(`Hello Everyone...iam ${name}`);//Hello Everyone...iam siri
+        }
+        greet1("siri");
+        //3.function with return
+
+    function add(a,b){
+        return a+b;
+    }
+    let result=add(2,9)
+    console.log(result);//11
+
+    //4.function with default values
+    function mul(a,b=7){
+return a+b;
+    }
+    console.log(mul(2,10));//12
+    console.log(mul(2));//9 
+
+    //5.function with name
+    function message(a,b){
+        let add=a+b
+console.log(add);
+    }
+    message(2,7)
+    message(7,7)
+    //6.Anonymous function (or)function with out name
+    //ex:1
+    let name=function(a,b){
+        let result=a+b;
+        console.log(result);
+    }
+    name(5,5)
+
+    //ex:2
+     setTimeout(function(){
+        console.log("iam siri");
+     },2000)
+
+     // 7.variable function
+
+     let greeting=function message(){
+        console.log("hello every one iam siri");
+     }
+     greeting()
+
+// 8.callback function
+
+function message2(callback,a){
+    console.log("Welcome");
+callback()
+a()
+    
+}
+function message4(){
+    console.log("Every one ");
+
+}
+function message5(){
+    console.log("have a great day");
+   
+}
+message2(message4,message5)
+
+
+//9.Nested function
+
+function calculations(){
+    function mul (a,b) {
+        return a*b;
+    }
+    console.log(mul(2,9));
+}
+calculations()
+
+// 10.Recursive function
+
+function factorial(n){
+    if(n===0){
+        return 1;
+    }
+    else{
+        return n*factorial(n-1)
+    }
+}
+console.log(factorial(9));
+
+// 11.IIFE(Immediately invoked function expression)
+
+(function (a,b){
+ console.log(a+b);
+
+})(2,6)
+
+// 12. Arrow function
+
+let gstcal=(p,gp)=>p+p*gp/100
+console.log(gstcal(1000,10));
+
+
+
+    </script>
+</body>
+</html>

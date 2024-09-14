@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEAL FINDER</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="food.css">
+</head>
+
+
+
+<body>
+    <header>
+        <nav class="head">
+            <div class="meal">
+            <i class="ri-home-8-line"></i>  
+            <h2>MEAL FINDER</h2>
+            </div>
+            <div>
+                <i class="ri-menu-fill" id="hamburger-icon"></i>
+                </div>
+                <ul class="listitems" id="list">
+                    <i class="ri-close-large-line" id="crossmark"></i>
+                     <li><a href="#" class="items">BEEF</a></ul>
+                     <li><a href="#" class="items">CHICKEN</a></ul>
+                     <li><a href="#" class="items">DESSERT</a></ul>
+                     <li><a href="#" class="items">LAMB</a></ul>
+                     <li><a href="#" class="items">MISCELLANEOUS</a></ul>
+                     <li><a href="#" class="items">PASTA</a></ul>
+                     <li><a href="#" class="items">PORK</a></ul>
+                     <li><a href="#" class="items">SEAFOOD</a></ul>
+                    <li><a href="#" class="items">SIDE</a></ul>
+                     <li><a href="#" class="items">STARTER</a></ul>
+                     <li><a href="#" class="items">VEGAN</a></ul>
+                     <li><a href="#" class="items">VEGITARIAN</a></ul>
+                     <li><a href="#" class="items">BREAKFAST</a></ul>
+                    <li> <a href="#" class="items">GOAT</a></li>
+                   
+                   
+                   
+
+                </ul>
+                
+               </nav>
+              
+    </header>
+    <img  class="banner" src="./banner kitchen.jpg" alt="kitchen banner">
+    <div class="searchrecipe">
+    <input  class="search-icon"type="search" name="search" id="search" placeholder="Search recipes here"><i class="ri-search-line" ></i>
+    <h1 class="top-heading">What are your favorite cuisines?</h1>
+    <p>PERSONALIZE YOUR EXPERIENCE</p>
+</div>
+ <h4 class="heading4">CATEGORIES</h4>
+
+
+ <section>
+    <div id="main-img"></div>
+      <div id="itemName" ></div> 
+    
+ </section>
+
+
+<script>
+     const hamburger = document.getElementById('hamburger-icon');
+        const dishes = document.getElementById('list');
+
+        const crossmark=document.getElementById('crossmark')
+
+        // Initially hide the list items
+        dishes.style.display = 'none';
+
+        hamburger.addEventListener('click', () => {
+            if (dishes.style.display === 'none') {
+                dishes.style.display = 'block';
+            } else {
+                dishes.style.display = 'none';
+            }
+        });
+        crossmark.addEventListener('click',()=>{
+            dishes.style.display="none"
+        })
+</script>
+
+<!-- to display the images from API -->
+<script>
+
+  
+document.addEventListener('DOMContentLoaded', () => {
+    const apiFetch = "https://www.themealdb.com/api/json/v1/1/categories.php";
+    
+    fetch(apiFetch)
+        .then(response => response.json())
+        .then(data => {
+            const categories = data.categories;
+            console.log(data);
+            const mainImgSection = document.getElementById('main-img');
+            
+            categories.forEach(category => {
+                // Create a container div for each category
+                const container = document.createElement('div');
+                container.classList.add('category-container'); // Add a class for styling
+
+                // Create the image element
+                const imgElement = document.createElement('img');
+                imgElement.src = category.strCategoryThumb;
+                imgElement.classList.add('category-image'); // Add a class for styling
+
+                // Create the text element
+                const imageName = document.createElement('p');
+                imageName.textContent = category.strCategory;
+                imageName.classList.add('category-name');
+
+                
+
+                
+                 // Add a class for styling
+               
+                
+
+                // Append the image and name to the container
+                container.appendChild(imgElement);
+                container.appendChild(imageName);
+
+                // Append the container to the main section
+                mainImgSection.appendChild(container);
+            });
+        })
+        .catch(error => console.error('Error fetching images:', error));
+});
+
+
+</script>
+
+</body>
+
+</html>

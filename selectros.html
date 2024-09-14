@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectros in JavaScript</title>
+</head>
+<style>
+    p {
+        border: 1px solid red;
+        color: blue;
+    }
+
+    .slt {
+        background-color: aqua;
+        color: black;
+
+    }
+
+    .box {
+        /* background-color: #a07cf5; */
+        color: black;
+    }
+</style>
+
+<body>
+    <div>1.Nishanth</div>
+    <section class="slt">2.Dhanvika</section>
+    <p>3.Hello Siri</p>
+    <section>4.Madhav</section>
+    <div>5.Rama</div>
+    <section id="lav">6.Lavanya</section>
+    <div>7.Madhavi</div>
+    <section>8.Girish</section>
+    <section class="slt">9.Ramesh</section>
+    <div>10.Pavan</div>
+    <h1 class="box">Iam heading 1 </h1>
+    <h1 class="box">Iam heading 2 </h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, sint! Laudantium, repudiandae facilis incidunt
+        nisi accusantium impedit debitis vitae, laborum hic, magni voluptatibus asperiores blanditiis fugiat. Laudantium
+        laboriosam temporibus quis.</p>
+<section class="slt">Welcome</section>
+
+    <script>
+        // 1.getElementByTagName: Selects all  elements with given tag name.Return an HTML collection.It return an array
+
+        //   *** This is 1st "Way to  style"***
+        console.log(document.getElementsByTagName("div"));
+        document.getElementsByTagName("div")[0].style.color = "orange"//nishanth--orange color
+        document.getElementsByTagName("div")[1].style.color = "green"//rama--greencolor
+
+        // *** This is 2nd "Way to  style using loops"***
+
+        let result = document.getElementsByName('section')//dhanvika,ramesh
+        for (i = 0; i < result.length; i++) {
+            result[i].classList = "slt"
+        }
+
+        //   *** This is 3rd "Way to  style using "classList" property***
+
+        console.log(document.getElementsByTagName("section"));
+        document.getElementsByTagName('section')[3].classList = "box";//girish
+
+
+        // 2.getElementByClassName():Selects all elements that have specified class name.Return as HTML collection
+
+       let styles=document.getElementsByClassName("box")//iam heading1 and iam heading 2 color is yellow
+       for(i=0;i<styles.length;i++){
+        styles[i].style.color="yellow"
+       }
+
+
+    //    3.getElementById():it will select a single element by using it's ID attribute.
+
+document.getElementById('lav').style.border="solid orange 2px"
+
+
+// 4.querySelectro():Select the first element that matches a specified css selector
+
+
+
+document.querySelector("section.slt").style.color="black";//dhanvika color--black  ==>1st occurance is dhanvika
+
+// 5.querySelectrAll():Select the all element that matches a specified css selector
+
+// ***1St way***
+console.log(document.querySelectorAll("section.slt"));//NodeList(3) [section.slt, section.slt, section.slt]
+
+document.querySelectorAll("section.slt")[2].style.color="blue"//welcome--color:blue
+
+// ***1St way using loops***
+
+let styling=document.querySelectorAll('section.slt')
+for(i=0;i<styling.length;i++){
+    styling[i].style.color="white";//dhanvika,ramesh,welcome--color:white
+}
+
+    </script>
+</body>
+
+</html>

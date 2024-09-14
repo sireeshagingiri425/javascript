@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops constructors example 1</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(){
+                var name;
+                var age;
+
+            }
+            setname(name){
+                this.name=name
+            }
+            setage(age){
+                this.age=age
+            }
+            getname(){
+               return this.name;
+            }
+            getage(){
+              return  this.age;
+            }
+            
+      display(){
+        return `name:${ this.name}age:${age}`
+      }  
+    }
+    
+    let a=new Person()
+            a.setname('siri')
+            a.setage('25')
+            
+
+    </script>
+</body>
+</html>

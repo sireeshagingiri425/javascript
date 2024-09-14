@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+    <!-- <link rel="stylesheet" href="categories.css"> -->
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            color: white;
+            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            background-color: #e65100eb;
+            padding: 0 10%;
+            height:440px;
+            text-align: center;
+            
+            
+        }
+
+        header>h2 {
+            margin: 0;
+            padding: 6px 0;
+        }
+
+        #searchButton {
+            border: none;
+            border-radius: 19px;
+            padding: 12px 21px;
+        }
+
+        main {
+            text-align: center;
+            background-image: url('https://img.freepik.com/premium-photo/cooking-banner-kitchen-black-table-ingredients-food-top-view-free-space-your-text_187166-11825.jpg?w=2000');
+            padding: 150px 0;
+        }
+
+        #searchIcon {
+            border: 1px solid white;
+            border-radius: 50%;
+            padding: 12px;
+            background: #e65100eb;
+            margin-left: 10px;
+        }
+        #searchIcon:hover{
+            background-color: white;
+            color: #e65100eb;
+        }
+
+        footer {
+            padding: 38px 10%;
+            background-color: #e0e0e7;
+        }
+
+        hr {
+            margin-top: -15px;
+            height: 3px;
+            margin-right: 95%;
+            background-color: #e65100eb;
+            border: none;
+        }
+
+        img {
+            width: 206px;
+            height: 144px;
+        }
+
+        .imageindividualcontainer img {
+    transition: transform 2s ease-in-out 1s;
+}
+
+.imageindividualcontainer:hover img {
+    transform: scale(0.9);
+}
+
+        #mainContainerImages {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 19px;
+            margin-top: 40px;
+        }
+
+        .imageindividualcontainer {
+            background-color: white;
+            padding: 6px;
+            position: relative;
+        }
+
+        .item-name {
+            text-transform: uppercase;
+            background-color: #e65100eb;
+            color: white;
+            padding: 4px 6px;
+            display: -webkit-inline-box;
+            border-radius: 4px;
+            position: absolute;
+            right: 6px;
+            top: -6px;
+            font-size: 12px;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 255px;
+            position: fixed;
+            top: 0;
+            right: -300px;
+            background-color: white;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            z-index: 1000;
+            padding: 60px 20px 0 20px;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+            border-bottom: 1px solid #57575721;
+        }
+
+        .sidebar a:hover {
+            color: #e65100eb;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            color: #e65100eb;
+            cursor: pointer;
+        }
+
+        .openbtn {
+            cursor: pointer;
+        }
+
+        
+        #itemimage{
+            height: 190px;
+        }
+        #showResults {
+            margin: 0 10%;
+            display: none;
+        }
+        #mainHeading {
+            border-bottom: 2px solid orangered;
+            margin-right: 94%;
+            margin-bottom: 18px;
+            color: black;
+        }
+        #itemCategory {
+            position: absolute;
+    left: 262px;
+    top: 53%;
+    border-radius: 25px;
+    background-color: white;
+    color: #e65100eb;
+    padding: 3px 18px;
+        }
+        #itemArea {
+            color: lightslategray;
+            padding-bottom: 6px;
+        }
+        #itemMeal{
+            color: black;
+    margin-top: -11px;
+    padding-bottom: 17px;
+        }
+        header>h2 {
+    margin: 0;
+    padding: 6px 0;
+    font-size: 19px;
+}
+footer>h2{
+    font-size: 19px;
+}
+main>p{
+    color: lightgray;
+    font-size: 14px;
+}
+    </style>
+</head>
+
+<body>
+    <header id="containerHeader">
+        <h2>
+            <span><i class="fa-duotone fa-solid fa-utensils" style="padding-right: 12px;"></i></span>MEAL FINDER
+        </h2>
+        <h2>
+            <i class="fa-solid fa-bars openbtn" onclick="openNav()"></i>
+        </h2>
+    </header>
+    <main>
+        <input type="search" name="searchButton" id="searchButton" placeholder="Search recipes here..">
+        <i class="fa-solid fa-magnifying-glass" id="searchIcon" onclick="findMeal()"> </i>
+        <h2>What are your favorite cuisines?</h2>
+        <p>PERSONALIZE YOUR EXPERIENCE</p>
+    </main>
+
+    <div id="showResults">
+        <h1 id="mainHeading"></h1>
+        <p id="itemCategory"></p>
+        <img id="itemimage"/>
+        <p id="itemArea"></p>
+        <h4 id="itemMeal"></h4>
+    </div>
+
+    <footer>
+        <h2 style="color: black;">CATEGORIES</h2>
+        <hr />
+        <section id="mainContainerImages">
+            <a href="./beef.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./chicken.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./desert.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./lamb.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./miscellaneous.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./pasta.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./pork.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./seafood.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./side.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./starter.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./vegan.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./vegetarian.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./breakfast.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+            <a href="./goat.html">
+                <section class="imageindividualcontainer">
+                    <p class="item-name"></p><img class="individual-container-image">
+                </section>
+            </a>
+        </section>
+    </footer>
+
+    <div id="mySidebar" class="sidebar">
+        <span class="closebtn" onclick="closeNav()"><i class="fa-regular fa-circle-xmark"></i></span>
+        <a href="./beef.html">Beef</a>
+        <a href="./chicken.html">Chicken</a>
+        <a href="./desert.html">Dessert</a>
+        <a href="./lamb.html">Lamb</a>
+        <a href="./miscellaneous.html">Miscellaneous</a>
+        <a href="./pasta.html">Pasta</a>
+        <a href="./pork.html">Pork</a>
+        <a href="./seafood.html">Seafood</a>
+        <a href="./side.html">Side</a>
+        <a href="./starter.html">Starter</a>
+        <a href="./vegan.html">Vegan</a>
+        <a href="./vegetarian.html">Vegetarian</a>
+        <a href="./breakfast.html">Breakfast</a>
+        <a href="./goat.html">Goat</a>
+
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.right = "0";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.right = "-300px";
+        }
+
+        let imageContainer = document.getElementsByClassName('individual-container-image');
+        let imageName = document.getElementsByClassName('item-name');
+
+        
+        fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                for (let i = 0; i < 14; i++) {
+                    imageName[i].textContent = data.categories[i].strCategory;
+                    imageContainer[i].src = data.categories[i].strCategoryThumb;
+                }
+            });
+
+        function findMeal() {
+            let query = document.getElementById("searchButton").value;
+            fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    
+                    if (data.meals) {
+                        let meal = data.meals[0]; 
+                        document.getElementById("showResults").style.display = "block";
+                        document.getElementById('mainHeading').innerText = 'Meal';
+                            document.getElementById('itemCategory').textContent = meal.strCategory;
+                            document.getElementById('itemimage').src = meal.strMealThumb;
+                            document.getElementById('itemArea').textContent = meal.strArea;
+                            document.getElementById('itemMeal').textContent = meal.strMeal;
+                        
+                    } else {
+                        document.getElementById("showResults").style.display = "block";
+                        document.getElementById("showResults").innerHTML = `<p>No any food found.</p>`;
+                        document.getElementById("showResults").style.color='black';
+                        document.getElementById("showResults").style.textAlign='center';
+                        
+                    }
+                });
+        }
+    </script>
+</body>
+
+</html>
